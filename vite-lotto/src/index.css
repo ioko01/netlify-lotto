@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "FC Minimal";
+  src: local("FC Minimal"),
+    url("./assets/fonts/FC_Minimal_Regular.ttf") format("truetype");
+}
+
+:root {
+  font-family: "FC Minimal", sans-serif;
+  font-size: 16px;
+  height: 100%;
+}
+
+body,
+#root {
+  height: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-shadow: none !important;
+  font-weight: 600;
+  outline: none;
+}
+
+nav a.active {
+  color: blue;
+}
+
+.tracking-wide {
+  letter-spacing: 0 !important;
+}

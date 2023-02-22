@@ -1,0 +1,93 @@
+@auth=Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJVSUQiOiI2aGlpYVRXRUxuU09rMFhiWGI0MyIsInRva2VuVmVyc2lvbiI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjc0NjM4NjEyLCJleHAiOjE2NzQ2NjAyMTJ9.aavGl6Rc3uV190TyXCK5TO_dPo5HYpxAb6Osx-eNyi10QhmpscmnWdF0PU0qnM-3H69x9LUkzXzotZt2IRVNXByNHkbPfAPud62ZvjV1dLeuecuzF1O808Khu60HrsX6iiSKp61T6QytJQ7Z3G2XGOcc2UkspsPuy5Ht4ulUKmm9FEoKJCVMS1-AZmT3v2CzpdjSrg_g1R55RCaG2aqOT_87Q3FKlP1vLhBYVYrdeZH7Ko0lrzXw4oU7_SFcYGFZZuUTNxys43Qeyf_xD___dSAfx2rrJ6GD7tILhKGb7loJmgMOzaDXYbZM-z2M8h3JclzgBsZ2YDRjCzYLzaz7Nw
+
+
+###
+POST http://localhost:8000/add/admin
+content-type: application/json
+
+{
+    "username": "admin01",
+    "password": "123456789",
+    "fullname": "admin",
+    "credit": 0
+}
+
+
+###
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin01",
+    "password": "123456789"
+}
+
+###
+POST http://localhost:8000/auth/logout
+Cookie: {{auth}}
+Content-Type: application/json
+
+{
+    "username": "admin01"
+}
+
+###
+POST http://localhost:8000/add/lotto
+Cookie: {{auth}}
+content-type: application/json
+
+{
+    "name": "ดาวน์โจนส์ VIP",
+    "img_flag": "jonevip.jpg",
+    "open": "2023-01-19 06.00",
+    "close": "2023-01-19 00.10",
+    "report": "2023-01-19 00.30",
+    "status": "OPEN"
+}
+
+###
+DELETE http://localhost:8000/delete/lotto
+Cookie: {{auth}}
+content-type: application/json
+
+{
+    "id": "LKyASx2SgDOtGFioWDT3"
+}
+
+###
+GET http://localhost:8000/get/lotto/all
+Cookie: {{auth}}
+
+###
+POST http://localhost:8000/add/agent
+Cookie: {{auth}}
+content-type: application/json
+
+{
+    "username": "agent01",
+    "password": "123456789",
+    "fullname": "agent",
+    "credit": 0
+}
+
+###
+GET http://localhost:8000/get/bill/all
+Cookie: {{auth}}
+
+###
+GET http://localhost:8000/get/user/me
+Cookie: {{auth}}
+
+###
+GET http://localhost:8000/get/user/all
+Cookie: {{auth}}
+
+###
+PUT http://localhost:8000/update/status/agent
+Cookie: {{auth}}
+content-type: application/json
+
+{
+    "id": "85MI669pD37GGckaKAxh",
+    "status": "REGULAR"
+}
